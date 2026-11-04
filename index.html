@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071d20">
+  <title>คืนวันเพ็ญ | LOY KRATHONG 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="หน้าแรก"><span class="brand-mark">✿</span><span>คืนวันเพ็ญ<small>LOY KRATHONG 2026</small></span></a>
+    <div class="topbar-right"><span class="live-dot"></span><span>FESTIVAL NIGHT</span></div>
+  </header>
+
+  <main id="app">
+    <section class="screen home-screen active" id="homeScreen">
+      <div class="home-sky">
+        <div class="moon-glow"></div><div class="moon-disc"></div>
+        <div class="sky-stars">✦　·　✧　　✦　·　✧　　✦</div>
+        <div class="temple-illustration" aria-hidden="true">
+          <div class="temple-spire"></div><div class="temple-roof roof-one"></div><div class="temple-roof roof-two"></div><div class="temple-roof roof-three"></div>
+          <div class="temple-body"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="home-copy">
+        <p class="eyebrow">A NIGHT OF LIGHT & WISHES</p>
+        <h1>ปล่อยความทุกข์<br><em>ลอยไปกับสายน้ำ</em></h1>
+        <p>ร่วมสร้างกระทงในแบบของคุณ<br>แล้วส่งคำอธิษฐานออกเดินทางใต้แสงจันทร์</p>
+        <button class="primary-btn" id="beginBtn">เริ่มต้นสร้างกระทง <span>↗</span></button>
+        <div class="home-foot"><span>✧</span> สืบสานประเพณีไทยด้วยหัวใจ <span>✧</span></div>
+      </div>
+      <div class="home-water"><div class="home-water-line"></div><div class="home-lotus">🪷</div></div>
+    </section>
+
+    <section class="screen profile-screen" id="profileScreen">
+      <div class="section-heading"><p class="eyebrow">YOUR FESTIVAL IDENTITY</p><h2>ก่อนออกเดินทาง<br><em>ขอรู้จักคุณหน่อย</em></h2><p>ชื่อและรูปของคุณจะอยู่บนกระทงที่ลอยในแม่น้ำ</p></div>
+      <div class="profile-layout">
+        <div class="photo-card">
+          <div class="photo-preview" id="profilePreview"><div class="photo-placeholder">＋<small>เพิ่มรูปของคุณ</small></div></div>
+          <label class="upload-btn" for="profileInput">เลือกรูปภาพ</label>
+          <input type="file" id="profileInput" accept="image/*" hidden>
+          <p class="micro-copy">รองรับ JPG, PNG และรูปจากโทรศัพท์</p>
+        </div>
+        <div class="profile-form">
+          <label for="nicknameInput">ชื่อที่ต้องการแสดง</label>
+          <input id="nicknameInput" maxlength="24" placeholder="เช่น มะลิ">
+          <button class="primary-btn full" id="toBuilderBtn">ไปสร้างกระทง <span>→</span></button>
+          <button class="text-btn" data-go="homeScreen">กลับหน้าแรก</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen builder-screen" id="builderScreen">
+      <div class="builder-heading">
+        <div><p class="eyebrow">CRAFT YOUR OWN KRATHONG</p><h2>กระทงของฉัน</h2><p>แตะของตกแต่ง แล้วมันจะไปอยู่บนกระทงทันที</p></div>
+        <button class="soft-btn" data-go="profileScreen">← กลับ</button>
+      </div>
+      <div class="builder-grid">
+        <div class="preview-column">
+          <div class="preview-topline"><span>LIVE PREVIEW</span><span class="view-hint">ลากเพื่อหมุนดูรอบ ๆ</span></div>
+          <div class="krathong-viewer" id="krathongViewer">
+            <div class="viewer-stars">✦　　·　✧　　·　✦</div>
+            <div class="krathong-tilt" id="krathongTilt">
+              <div class="krathong-model" id="krathongModel">
+                <svg class="krathong-base" viewBox="0 0 420 420" role="img" aria-label="กระทงใบตอง">
+                  <defs>
+                    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9dbd61"/><stop offset=".45" stop-color="#397d48"/><stop offset="1" stop-color="#143f32"/></linearGradient>
+                    <radialGradient id="bowl"><stop stop-color="#6b9a49"/><stop offset=".65" stop-color="#28603d"/><stop offset="1" stop-color="#103b2c"/></radialGradient>
+                    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffe9a0"/><stop offset=".45" stop-color="#c78e37"/><stop offset="1" stop-color="#815322"/></linearGradient>
+                    <filter id="softShadow"><feGaussianBlur stdDeviation="7"/></filter>
+                  </defs>
+                  <ellipse cx="210" cy="244" rx="174" ry="145" fill="#000" opacity=".34" filter="url(#softShadow)"/>
+                  <g class="banana-leaves" stroke="#b4d27a" stroke-width="3">
+                    <path d="M210 218 Q25 52 42 174 Q98 267 210 218" fill="url(#leaf)"/>
+                    <path d="M210 218 Q395 52 378 174 Q322 267 210 218" fill="url(#leaf)"/>
+                    <path d="M210 218 Q80 20 143 25 Q208 91 210 218" fill="url(#leaf)"/>
+                    <path d="M210 218 Q340 20 277 25 Q212 91 210 218" fill="url(#leaf)"/>
+                    <path d="M210 218 Q64 318 133 392 Q207 325 210 218" fill="url(#leaf)"/>
+                    <path d="M210 218 Q356 318 287 392 Q213 325 210 218" fill="url(#leaf)"/>
+                    <g fill="none" stroke="#d2e49a" stroke-width="2" opacity=".75"><path d="M210 218L42 174"/><path d="M210 218L378 174"/><path d="M210 218L143 25"/><path d="M210 218L277 25"/><path d="M210 218L133 392"/><path d="M210 218L287 392"/></g>
+                  </g>
+                  <ellipse cx="210" cy="224" rx="145" ry="126" fill="#092d27" opacity=".7"/>
+                  <ellipse cx="210" cy="211" rx="137" ry="119" fill="url(#gold)"/>
+                  <ellipse cx="210" cy="207" rx="124" ry="106" fill="#1b5139" stroke="#ffe4a0" stroke-width="5"/>
+                  <ellipse cx="210" cy="205" rx="101" ry="86" fill="url(#bowl)" stroke="#d4a54d" stroke-width="9"/>
+                  <ellipse cx="210" cy="198" rx="82" ry="68" fill="#28633e" stroke="#f3d58c" stroke-width="4"/>
+                  <g fill="#f4dfa7" stroke="#fff1c8" stroke-width="2">
+                    <ellipse cx="210" cy="133" rx="11" ry="25"/><ellipse cx="210" cy="263" rx="11" ry="25"/>
+                    <ellipse cx="145" cy="198" rx="25" ry="11"/><ellipse cx="275" cy="198" rx="25" ry="11"/>
+                    <ellipse cx="164" cy="152" rx="11" ry="25" transform="rotate(-45 164 152)"/>
+                    <ellipse cx="256" cy="152" rx="11" ry="25" transform="rotate(45 256 152)"/>
+                    <ellipse cx="164" cy="244" rx="11" ry="25" transform="rotate(45 164 244)"/>
+                    <ellipse cx="256" cy="244" rx="11" ry="25" transform="rotate(-45 256 244)"/>
+                  </g>
+                  <ellipse cx="210" cy="198" rx="37" ry="31" fill="#d5a34b" stroke="#ffe5a1" stroke-width="4"/>
+                  <ellipse cx="210" cy="195" rx="25" ry="21" fill="#f3d58c"/>
+                </svg>
+                <div class="decor-layer" id="decorLayer"></div>
+                <div class="owner-medallion" id="ownerMedallion"><div class="owner-photo" id="ownerPhoto"><span>รูปคุณ</span></div><b id="ownerName">คุณ</b></div>
+              </div>
+            </div>
+            <div class="viewer-controls"><button id="rotateLeft" aria-label="หมุนซ้าย">↶</button><span>หมุนกระทง</span><button id="rotateRight" aria-label="หมุนขวา">↷</button><button id="resetView" aria-label="มุมมองปกติ">◎</button></div>
+          </div>
+          <div class="crop-panel">
+            <div class="crop-title"><strong>จัดตำแหน่งรูปของคุณ</strong><span>เลื่อนรูปในวงกลมเพื่อเลือกส่วนที่ต้องการ</span></div>
+            <div class="crop-actions"><button id="cropLeft">←</button><button id="cropUp">↑</button><button id="cropDown">↓</button><button id="cropRight">→</button><label>ซูม <input type="range" id="photoZoom" min="100" max="240" value="120"></label></div>
+          </div>
+        </div>
+        <aside class="decor-panel">
+          <div class="panel-title"><span class="panel-icon">✿</span><div><strong>เลือกของตกแต่ง</strong><small>แตะเพื่อเพิ่มลงบนกระทง</small></div></div>
+          <div class="decor-category"><span>ดอกไม้</span><div class="decor-options">
+            <button class="decor-option" data-item="marigold"><i>🌼</i><small>ดาวเรือง</small></button>
+            <button class="decor-option" data-item="jasmine"><i>🌸</i><small>มะลิ</small></button>
+            <button class="decor-option" data-item="hibiscus"><i>🌺</i><small>ชบา</small></button>
+            <button class="decor-option" data-item="lotus"><i>🪷</i><small>ดอกบัว</small></button>
+            <button class="decor-option" data-item="whiteflower"><i>💮</i><small>ดอกไม้ขาว</small></button>
+          </div></div>
+          <div class="decor-category"><span>แสงสว่าง</span><div class="decor-options">
+            <button class="decor-option" data-item="candle"><i>🕯️</i><small>เทียน</small></button>
+            <button class="decor-option" data-item="lamp"><i>🪔</i><small>ประทีป</small></button>
+          </div></div>
+          <div class="decor-category"><span>ของประดับ</span><div class="decor-options">
+            <button class="decor-option" data-item="heart"><i>💛</i><small>หัวใจ</small></button>
+            <button class="decor-option" data-item="sparkle"><i>✨</i><small>ประกาย</small></button>
+            <button class="decor-option" data-item="leaf"><i>🌿</i><small>ใบไม้</small></button>
+          </div></div>
+          <div class="selected-summary"><div><strong>ของตกแต่งของฉัน</strong><span id="decorCount">0 ชิ้น</span></div><div class="selected-chips" id="selectedChips"><small>ยังไม่ได้เลือกของตกแต่ง</small></div><button class="clear-btn" id="clearDecor">ล้างของตกแต่งทั้งหมด</button></div>
+          <button class="primary-btn full" id="toWishBtn">กระทงสวยแล้ว ไปเขียนคำอธิษฐาน <span>→</span></button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen wish-screen" id="wishScreen">
+      <div class="section-heading"><p class="eyebrow">MAKE A WISH</p><h2>ฝากคำอธิษฐาน<br><em>ไว้กับสายน้ำ</em></h2><p>เขียนสิ่งที่อยากบอก แล้วส่งไปพร้อมกระทงของคุณ</p></div>
+      <div class="wish-card"><div class="wish-lotus">🪷</div><textarea id="wishInput" maxlength="240" placeholder="ขอให้ปีนี้เป็นปีที่ดี ขอให้คนที่รักมีความสุข..."></textarea><div class="wish-footer"><span>คำอธิษฐานของคุณจะมองเห็นได้เมื่อมีคนแตะกระทง</span><span id="wishCount">0/240</span></div><button class="primary-btn full" id="toRiverBtn">ไปยังริมแม่น้ำ <span>→</span></button><button class="text-btn" data-go="builderScreen">กลับไปตกแต่งกระทง</button></div>
+    </section>
+
+    <section class="screen river-screen" id="riverScreen">
+      <div class="river-title"><p class="eyebrow">THE RIVER OF WISHES</p><h2>สายน้ำแห่งคำอธิษฐาน</h2><p>แตะค้างที่กระทงของคุณ แล้วลากลงสู่แม่น้ำ</p></div>
+      <div class="festival-sky">
+        <div class="river-moon"></div><div class="river-temple"><div class="temple-spire"></div><div class="temple-roof roof-one"></div><div class="temple-roof roof-two"></div><div class="temple-roof roof-three"></div><div class="temple-body"><i></i><i></i><i></i></div></div>
+        <div class="sky-lantern lantern-one">✧</div><div class="sky-lantern lantern-two">✧</div><div class="sky-lantern lantern-three">✧</div>
+        <div class="sky-label">คืนวันเพ็ญ · ลอยกระทง ๒๕๖๙</div>
+      </div>
+      <div class="river-water" id="riverWater">
+        <div class="water-shimmer shimmer-a"></div><div class="water-shimmer shimmer-b"></div>
+        <div class="water-ripples"></div>
+        <div class="floating-layer" id="floatingLayer"></div>
+        <div class="river-empty" id="riverEmpty"><span>✦</span><strong>สายน้ำยังรอคำอธิษฐาน</strong><small>มาเป็นคนแรกที่ปล่อยกระทงกันนะ</small></div>
+      </div>
+      <div class="shore-area">
+        <div class="shore-copy"><span class="shore-lotus">🪷</span><div><strong>กระทงของ <b id="riverOwnerName">คุณ</b></strong><small>กดค้างแล้วลากกระทงลงไปในแม่น้ำ</small></div></div>
+        <div class="drag-source" id="dragSource" aria-label="ลากกระทงของฉันลงแม่น้ำ"></div>
+        <div class="drag-tip">☝ แตะค้างที่กระทง แล้วลากขึ้นไปบนผิวน้ำ</div>
+      </div>
+      <div class="river-actions"><button class="outline-btn" id="friendsBtn">✿ ดูกระทงของทุกคน <span id="friendsCount">0</span></button><button class="text-btn" data-go="builderScreen">กลับไปแก้ไขกระทง</button></div>
+    </section>
+
+    <section class="screen friends-screen" id="friendsScreen">
+      <div class="builder-heading"><div><p class="eyebrow">LIGHTS ON THE WATER</p><h2>กระทงที่ลอยอยู่</h2><p>แตะกระทงเพื่ออ่านคำอธิษฐาน</p></div><button class="soft-btn" data-go="riverScreen">← กลับแม่น้ำ</button></div>
+      <div class="friends-grid" id="friendsGrid"></div>
+    </section>
+
+    <div class="detail-overlay" id="detailOverlay" aria-hidden="true">
+      <div class="detail-card"><button class="detail-close" id="closeDetail">×</button><div class="detail-krathong" id="detailKrathong"></div><p class="eyebrow">A WISH ON THE WATER</p><h3 id="detailName">ชื่อเจ้าของ</h3><div class="wish-quote" id="detailWish"></div><small id="detailDate"></small></div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+  </main>
+  <footer class="site-footer">✧ LOY KRATHONG 2026 · สืบสานประเพณีไทย ✧</footer>
+  <script src="main.js"></script>
+</body>
+</html>
